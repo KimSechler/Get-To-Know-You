@@ -1,0 +1,1188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting To Know You Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Fredoka', sans-serif;
+            background: linear-gradient(135deg, #87CEEB 0%, #98D8E8 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .cloud {
+            position: absolute;
+            background: white;
+            border-radius: 50px;
+            opacity: 0.8;
+            animation: drift linear infinite;
+        }
+
+        .cloud::before,
+        .cloud::after {
+            content: '';
+            position: absolute;
+            background: white;
+            border-radius: 50px;
+        }
+
+        .cloud1 {
+            width: 120px;
+            height: 60px;
+            top: 20%;
+            left: -150px;
+            animation: drift 60s linear infinite, float1 8s ease-in-out infinite;
+            animation-delay: 0s, 2s;
+        }
+
+        .cloud1::before {
+            width: 75px;
+            height: 75px;
+            top: -37px;
+            left: 15px;
+        }
+
+        .cloud1::after {
+            width: 90px;
+            height: 60px;
+            top: -22px;
+            right: 15px;
+        }
+
+        .cloud2 {
+            width: 90px;
+            height: 45px;
+            top: 40%;
+            right: -120px;
+            animation: drift 70s linear infinite reverse, float2 6s ease-in-out infinite;
+            animation-delay: 15s, 8s;
+        }
+
+        .cloud2::before {
+            width: 60px;
+            height: 60px;
+            top: -30px;
+            left: 12px;
+        }
+
+        .cloud2::after {
+            width: 67px;
+            height: 45px;
+            top: -15px;
+            right: 12px;
+        }
+
+        .cloud3 {
+            width: 150px;
+            height: 75px;
+            top: 60%;
+            left: -180px;
+            animation: drift 80s linear infinite, float3 10s ease-in-out infinite;
+            animation-delay: 30s, 5s;
+        }
+
+        .cloud3::before {
+            width: 90px;
+            height: 90px;
+            top: -45px;
+            left: 22px;
+        }
+
+        .cloud3::after {
+            width: 105px;
+            height: 75px;
+            top: -30px;
+            right: 22px;
+        }
+
+        .cloud4 {
+            width: 105px;
+            height: 52px;
+            top: 10%;
+            right: -135px;
+            animation: drift 65s linear infinite reverse, float4 7s ease-in-out infinite;
+            animation-delay: 45s, 12s;
+        }
+
+        .cloud4::before {
+            width: 67px;
+            height: 67px;
+            top: -33px;
+            left: 18px;
+        }
+
+        .cloud4::after {
+            width: 75px;
+            height: 52px;
+            top: -18px;
+            right: 18px;
+        }
+
+        .cloud5 {
+            width: 135px;
+            height: 67px;
+            top: 80%;
+            left: -165px;
+            animation: drift 75s linear infinite, float5 9s ease-in-out infinite;
+            animation-delay: 10s, 15s;
+        }
+
+        .cloud5::before {
+            width: 82px;
+            height: 82px;
+            top: -40px;
+            left: 27px;
+        }
+
+        .cloud5::after {
+            width: 97px;
+            height: 67px;
+            top: -27px;
+            right: 27px;
+        }
+
+        .cloud6 {
+            width: 112px;
+            height: 57px;
+            top: 15%;
+            left: -142px;
+            animation: drift 85s linear infinite, float6 11s ease-in-out infinite;
+            animation-delay: 22s, 18s;
+        }
+
+        .cloud6::before {
+            width: 72px;
+            height: 72px;
+            top: -36px;
+            left: 21px;
+        }
+
+        .cloud6::after {
+            width: 82px;
+            height: 57px;
+            top: -21px;
+            right: 21px;
+        }
+
+        .cloud7 {
+            width: 127px;
+            height: 63px;
+            top: 35%;
+            right: -157px;
+            animation: drift 72s linear infinite reverse, float7 8s ease-in-out infinite;
+            animation-delay: 38s, 25s;
+        }
+
+        .cloud7::before {
+            width: 78px;
+            height: 78px;
+            top: -39px;
+            left: 24px;
+        }
+
+        .cloud7::after {
+            width: 90px;
+            height: 63px;
+            top: -24px;
+            right: 24px;
+        }
+
+        .cloud8 {
+            width: 97px;
+            height: 48px;
+            top: 55%;
+            left: -127px;
+            animation: drift 78s linear infinite, float8 9s ease-in-out infinite;
+            animation-delay: 52s, 7s;
+        }
+
+        .cloud8::before {
+            width: 63px;
+            height: 63px;
+            top: -31px;
+            left: 16px;
+        }
+
+        .cloud8::after {
+            width: 72px;
+            height: 48px;
+            top: -16px;
+            right: 16px;
+        }
+
+        .cloud9 {
+            width: 142px;
+            height: 72px;
+            top: 75%;
+            right: -172px;
+            animation: drift 82s linear infinite reverse, float9 12s ease-in-out infinite;
+            animation-delay: 5s, 30s;
+        }
+
+        .cloud9::before {
+            width: 87px;
+            height: 87px;
+            top: -43px;
+            left: 27px;
+        }
+
+        .cloud9::after {
+            width: 102px;
+            height: 72px;
+            top: -28px;
+            right: 27px;
+        }
+
+        .cloud10 {
+            width: 108px;
+            height: 54px;
+            top: 25%;
+            left: -138px;
+            animation: drift 88s linear infinite, float10 7s ease-in-out infinite;
+            animation-delay: 67s, 14s;
+        }
+
+        .cloud10::before {
+            width: 69px;
+            height: 69px;
+            top: -34px;
+            left: 19px;
+        }
+
+        .cloud10::after {
+            width: 78px;
+            height: 54px;
+            top: -19px;
+            right: 19px;
+        }
+
+        .cloud11 {
+            width: 132px;
+            height: 66px;
+            top: 45%;
+            right: -162px;
+            animation: drift 68s linear infinite reverse, float11 10s ease-in-out infinite;
+            animation-delay: 18s, 35s;
+        }
+
+        .cloud11::before {
+            width: 81px;
+            height: 81px;
+            top: -40px;
+            left: 25px;
+        }
+
+        .cloud11::after {
+            width: 93px;
+            height: 66px;
+            top: -25px;
+            right: 25px;
+        }
+
+        .cloud12 {
+            width: 117px;
+            height: 58px;
+            top: 65%;
+            left: -147px;
+            animation: drift 76s linear infinite, float12 8s ease-in-out infinite;
+            animation-delay: 41s, 22s;
+        }
+
+        .cloud12::before {
+            width: 73px;
+            height: 73px;
+            top: -36px;
+            left: 21px;
+        }
+
+        .cloud12::after {
+            width: 84px;
+            height: 58px;
+            top: -21px;
+            right: 21px;
+        }
+
+        .cloud13 {
+            width: 123px;
+            height: 61px;
+            top: 5%;
+            right: -153px;
+            animation: drift 74s linear infinite reverse, float13 9s ease-in-out infinite;
+            animation-delay: 55s, 11s;
+        }
+
+        .cloud13::before {
+            width: 76px;
+            height: 76px;
+            top: -37px;
+            left: 22px;
+        }
+
+        .cloud13::after {
+            width: 87px;
+            height: 61px;
+            top: -22px;
+            right: 22px;
+        }
+
+        .cloud14 {
+            width: 102px;
+            height: 51px;
+            top: 85%;
+            left: -132px;
+            animation: drift 86s linear infinite, float14 11s ease-in-out infinite;
+            animation-delay: 8s, 40s;
+        }
+
+        .cloud14::before {
+            width: 66px;
+            height: 66px;
+            top: -33px;
+            left: 18px;
+        }
+
+        .cloud14::after {
+            width: 75px;
+            height: 51px;
+            top: -18px;
+            right: 18px;
+        }
+
+        .cloud15 {
+            width: 138px;
+            height: 69px;
+            top: 30%;
+            right: -168px;
+            animation: drift 71s linear infinite reverse, float15 7s ease-in-out infinite;
+            animation-delay: 28s, 50s;
+        }
+
+        .cloud15::before {
+            width: 84px;
+            height: 84px;
+            top: -42px;
+            left: 27px;
+        }
+
+        .cloud15::after {
+            width: 96px;
+            height: 69px;
+            top: -27px;
+            right: 27px;
+        }
+
+        .cloud16 {
+            width: 111px;
+            height: 55px;
+            top: 12%;
+            left: -141px;
+            animation: drift 90s linear infinite, float16 12s ease-in-out infinite;
+            animation-delay: 35s, 28s;
+        }
+
+        .cloud16::before {
+            width: 70px;
+            height: 70px;
+            top: -35px;
+            left: 20px;
+        }
+
+        .cloud16::after {
+            width: 79px;
+            height: 55px;
+            top: -20px;
+            right: 20px;
+        }
+
+        .cloud17 {
+            width: 129px;
+            height: 64px;
+            top: 38%;
+            right: -159px;
+            animation: drift 77s linear infinite reverse, float17 9s ease-in-out infinite;
+            animation-delay: 12s, 45s;
+        }
+
+        .cloud17::before {
+            width: 79px;
+            height: 79px;
+            top: -39px;
+            left: 24px;
+        }
+
+        .cloud17::after {
+            width: 91px;
+            height: 64px;
+            top: -24px;
+            right: 24px;
+        }
+
+        .cloud18 {
+            width: 99px;
+            height: 49px;
+            top: 58%;
+            left: -129px;
+            animation: drift 83s linear infinite, float18 10s ease-in-out infinite;
+            animation-delay: 58s, 16s;
+        }
+
+        .cloud18::before {
+            width: 64px;
+            height: 64px;
+            top: -32px;
+            left: 17px;
+        }
+
+        .cloud18::after {
+            width: 73px;
+            height: 49px;
+            top: -17px;
+            right: 17px;
+        }
+
+        .cloud19 {
+            width: 147px;
+            height: 73px;
+            top: 78%;
+            right: -177px;
+            animation: drift 79s linear infinite reverse, float19 8s ease-in-out infinite;
+            animation-delay: 25s, 38s;
+        }
+
+        .cloud19::before {
+            width: 88px;
+            height: 88px;
+            top: -44px;
+            left: 27px;
+        }
+
+        .cloud19::after {
+            width: 103px;
+            height: 73px;
+            top: -29px;
+            right: 27px;
+        }
+
+        .cloud20 {
+            width: 114px;
+            height: 57px;
+            top: 22%;
+            left: -144px;
+            animation: drift 87s linear infinite, float20 11s ease-in-out infinite;
+            animation-delay: 48s, 32s;
+        }
+
+        .cloud20::before {
+            width: 72px;
+            height: 72px;
+            top: -36px;
+            left: 21px;
+        }
+
+        .cloud20::after {
+            width: 81px;
+            height: 57px;
+            top: -21px;
+            right: 21px;
+        }
+
+        .cloud21 {
+            width: 126px;
+            height: 63px;
+            top: 48%;
+            right: -156px;
+            animation: drift 73s linear infinite reverse, float21 9s ease-in-out infinite;
+            animation-delay: 62s, 20s;
+        }
+
+        .cloud21::before {
+            width: 78px;
+            height: 78px;
+            top: -39px;
+            left: 24px;
+        }
+
+        .cloud21::after {
+            width: 90px;
+            height: 63px;
+            top: -24px;
+            right: 24px;
+        }
+
+        .cloud22 {
+            width: 96px;
+            height: 48px;
+            top: 68%;
+            left: -126px;
+            animation: drift 81s linear infinite, float22 12s ease-in-out infinite;
+            animation-delay: 14s, 42s;
+        }
+
+        .cloud22::before {
+            width: 61px;
+            height: 61px;
+            top: -30px;
+            left: 17px;
+        }
+
+        .cloud22::after {
+            width: 70px;
+            height: 48px;
+            top: -17px;
+            right: 17px;
+        }
+
+        .cloud23 {
+            width: 141px;
+            height: 70px;
+            top: 8%;
+            right: -171px;
+            animation: drift 84s linear infinite reverse, float23 8s ease-in-out infinite;
+            animation-delay: 33s, 55s;
+        }
+
+        .cloud23::before {
+            width: 85px;
+            height: 85px;
+            top: -42px;
+            left: 27px;
+        }
+
+        .cloud23::after {
+            width: 100px;
+            height: 70px;
+            top: -27px;
+            right: 27px;
+        }
+
+        .cloud24 {
+            width: 106px;
+            height: 53px;
+            top: 88%;
+            left: -136px;
+            animation: drift 89s linear infinite, float24 10s ease-in-out infinite;
+            animation-delay: 70s, 8s;
+        }
+
+        .cloud24::before {
+            width: 67px;
+            height: 67px;
+            top: -33px;
+            left: 19px;
+        }
+
+        .cloud24::after {
+            width: 76px;
+            height: 53px;
+            top: -19px;
+            right: 19px;
+        }
+
+        .cloud25 {
+            width: 130px;
+            height: 65px;
+            top: 28%;
+            right: -160px;
+            animation: drift 69s linear infinite reverse, float25 11s ease-in-out infinite;
+            animation-delay: 44s, 26s;
+        }
+
+        .cloud25::before {
+            width: 81px;
+            height: 81px;
+            top: -40px;
+            left: 24px;
+        }
+
+        .cloud25::after {
+            width: 93px;
+            height: 65px;
+            top: -24px;
+            right: 24px;
+        }
+
+        .cloud26 {
+            width: 100px;
+            height: 50px;
+            top: 52%;
+            left: -130px;
+            animation: drift 91s linear infinite, float26 9s ease-in-out infinite;
+            animation-delay: 17s, 48s;
+        }
+
+        .cloud26::before {
+            width: 64px;
+            height: 64px;
+            top: -32px;
+            left: 18px;
+        }
+
+        .cloud26::after {
+            width: 73px;
+            height: 50px;
+            top: -18px;
+            right: 18px;
+        }
+
+        .cloud27 {
+            width: 144px;
+            height: 72px;
+            top: 72%;
+            right: -174px;
+            animation: drift 66s linear infinite reverse, float27 7s ease-in-out infinite;
+            animation-delay: 56s, 36s;
+        }
+
+        .cloud27::before {
+            width: 87px;
+            height: 87px;
+            top: -43px;
+            left: 28px;
+        }
+
+        .cloud27::after {
+            width: 102px;
+            height: 72px;
+            top: -28px;
+            right: 28px;
+        }
+
+        .cloud28 {
+            width: 118px;
+            height: 59px;
+            top: 18%;
+            left: -148px;
+            animation: drift 92s linear infinite, float28 13s ease-in-out infinite;
+            animation-delay: 39s, 12s;
+        }
+
+        .cloud28::before {
+            width: 75px;
+            height: 75px;
+            top: -37px;
+            left: 21px;
+        }
+
+        .cloud28::after {
+            width: 85px;
+            height: 59px;
+            top: -21px;
+            right: 21px;
+        }
+
+        .cloud29 {
+            width: 124px;
+            height: 62px;
+            top: 42%;
+            right: -154px;
+            animation: drift 67s linear infinite reverse, float29 10s ease-in-out infinite;
+            animation-delay: 21s, 52s;
+        }
+
+        .cloud29::before {
+            width: 76px;
+            height: 76px;
+            top: -38px;
+            left: 24px;
+        }
+
+        .cloud29::after {
+            width: 88px;
+            height: 62px;
+            top: -24px;
+            right: 24px;
+        }
+
+        .cloud30 {
+            width: 109px;
+            height: 54px;
+            top: 62%;
+            left: -139px;
+            animation: drift 93s linear infinite, float30 8s ease-in-out infinite;
+            animation-delay: 65s, 24s;
+        }
+
+        .cloud30::before {
+            width: 69px;
+            height: 69px;
+            top: -34px;
+            left: 20px;
+        }
+
+        .cloud30::after {
+            width: 79px;
+            height: 54px;
+            top: -20px;
+            right: 20px;
+        }
+
+        @keyframes drift {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(calc(100vw + 200px));
+            }
+        }
+
+        @keyframes float1 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-15px); } }
+        @keyframes float2 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-12px); } }
+        @keyframes float3 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-18px); } }
+        @keyframes float4 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        @keyframes float5 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes float6 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-14px); } }
+        @keyframes float7 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-16px); } }
+        @keyframes float8 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-11px); } }
+        @keyframes float9 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-22px); } }
+        @keyframes float10 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-13px); } }
+        @keyframes float11 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-17px); } }
+        @keyframes float12 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-9px); } }
+        @keyframes float13 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-19px); } }
+        @keyframes float14 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-21px); } }
+        @keyframes float15 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
+        @keyframes float16 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-24px); } }
+        @keyframes float17 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-15px); } }
+        @keyframes float18 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-12px); } }
+        @keyframes float19 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-16px); } }
+        @keyframes float20 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-18px); } }
+        @keyframes float21 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-14px); } }
+        @keyframes float22 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-23px); } }
+        @keyframes float23 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-11px); } }
+        @keyframes float24 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-17px); } }
+        @keyframes float25 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes float26 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        @keyframes float27 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-13px); } }
+        @keyframes float28 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-25px); } }
+        @keyframes float29 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-16px); } }
+        @keyframes float30 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-12px); } }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .title {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 700;
+            color: #7c3aed;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            font-weight: 400;
+            color: #7c3aed;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            gap: 15px;
+            flex: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .question-box {
+            background: white;
+            border: 3px dotted #7c3aed;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            position: relative;
+            min-height: 80px;
+            overflow: hidden;
+        }
+
+        .question-box:hover {
+            transform: scale(1.05);
+        }
+
+        .star {
+            font-size: clamp(3rem, 8vw, 6rem);
+            filter: drop-shadow(0 0 20px rgba(255, 255, 0, 0.8)) drop-shadow(0 0 40px rgba(255, 255, 0, 0.4));
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .question-text {
+            color: #7c3aed;
+            font-weight: 600;
+            text-align: center;
+            padding: 8px;
+            font-size: 1rem;
+            line-height: 1.1;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f0fdf4;
+            border-radius: 12px;
+            hyphens: none;
+            word-break: normal;
+            overflow-wrap: break-word;
+        }
+
+        .question-box.revealed .star {
+            opacity: 0;
+        }
+
+        .question-box.revealed .question-text {
+            opacity: 1;
+        }
+
+        .reset-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #7c3aed;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 16px;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 12px;
+            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .reset-button:hover {
+            background: #6d28d9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .game-grid {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(10, 1fr);
+                gap: 10px;
+            }
+            
+            .question-box {
+                min-height: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+    <div class="cloud cloud4"></div>
+    <div class="cloud cloud5"></div>
+    <div class="cloud cloud6"></div>
+    <div class="cloud cloud7"></div>
+    <div class="cloud cloud8"></div>
+    <div class="cloud cloud9"></div>
+    <div class="cloud cloud10"></div>
+    <div class="cloud cloud11"></div>
+    <div class="cloud cloud12"></div>
+    <div class="cloud cloud13"></div>
+    <div class="cloud cloud14"></div>
+    <div class="cloud cloud15"></div>
+    <div class="cloud cloud16"></div>
+    <div class="cloud cloud17"></div>
+    <div class="cloud cloud18"></div>
+    <div class="cloud cloud19"></div>
+    <div class="cloud cloud20"></div>
+    <div class="cloud cloud21"></div>
+    <div class="cloud cloud22"></div>
+    <div class="cloud cloud23"></div>
+    <div class="cloud cloud24"></div>
+    <div class="cloud cloud25"></div>
+    <div class="cloud cloud26"></div>
+    <div class="cloud cloud27"></div>
+    <div class="cloud cloud28"></div>
+    <div class="cloud cloud29"></div>
+    <div class="cloud cloud30"></div>
+
+    <div class="container">
+        <div class="header">
+            <h1 class="title">Getting To Know You</h1>
+            <p class="subtitle">Click on a box to reveal a question</p>
+        </div>
+
+        <div class="game-grid" id="gameGrid">
+            <!-- Grid items will be generated by JavaScript -->
+        </div>
+
+        <button class="reset-button" onclick="resetGame()">Reset</button>
+    </div>
+
+    <script>
+        const questions = [
+            "What is your favorite color?",
+            "What makes you happy?",
+            "What is your favorite animal?",
+            "What do you like to do for fun?",
+            "What is your favorite food?",
+            "Who is your best friend?",
+            "What is your favorite toy?",
+            "What makes you laugh?",
+            "What is your favorite book?",
+            "What do you want to be when you grow up?",
+            "What is your favorite season?",
+            "What is your favorite song?",
+            "What makes you feel brave?",
+            "What is your favorite game?",
+            "What do you like about school?",
+            "What is your favorite snack?",
+            "What makes you feel proud?",
+            "What is your favorite place to visit?",
+            "What do you like to draw?",
+            "What is your favorite movie?",
+            "What makes you feel excited?",
+            "What is your favorite sport?",
+            "What do you like to build?",
+            "What is your favorite holiday?",
+            "What makes you feel calm?",
+            "What is your favorite ice cream?",
+            "What do you like to collect?",
+            "What is your favorite superhero?",
+            "What makes you feel special?",
+            "What do you dream about?"
+        ];
+
+        const starColors = [
+            { emoji: '⭐', color: '#ff6b6b' },
+            { emoji: '⭐', color: '#4ecdc4' },
+            { emoji: '⭐', color: '#45b7d1' },
+            { emoji: '⭐', color: '#96ceb4' },
+            { emoji: '⭐', color: '#feca57' },
+            { emoji: '⭐', color: '#ff9ff3' },
+            { emoji: '⭐', color: '#54a0ff' },
+            { emoji: '⭐', color: '#5f27cd' },
+            { emoji: '⭐', color: '#00d2d3' },
+            { emoji: '⭐', color: '#ff9f43' },
+            { emoji: '⭐', color: '#ee5a24' },
+            { emoji: '⭐', color: '#0984e3' }
+        ];
+        const confettiColors = ['#FF0080', '#00FF80', '#8000FF', '#FF8000', '#0080FF', '#FF4000', '#40FF00', '#FF0040', '#00FFFF', '#FFFF00', '#FF00FF', '#80FF00'];
+
+        function createGrid() {
+            const grid = document.getElementById('gameGrid');
+            grid.innerHTML = '';
+            
+            for (let i = 0; i < 30; i++) {
+                const box = document.createElement('div');
+                box.className = 'question-box';
+                box.onclick = () => revealQuestion(box, i);
+                
+                const star = document.createElement('div');
+                star.className = 'star';
+                const starData = starColors[Math.floor(Math.random() * starColors.length)];
+                star.textContent = starData.emoji;
+                star.style.color = starData.color;
+                
+                const questionText = document.createElement('div');
+                questionText.className = 'question-text';
+                questionText.textContent = questions[i];
+                
+                box.appendChild(star);
+                box.appendChild(questionText);
+                grid.appendChild(box);
+                
+                // Auto-size font to fill the box
+                setTimeout(() => {
+                    adjustFontSize(questionText);
+                }, 10);
+            }
+        }
+
+        function revealQuestion(box, index) {
+            if (box.classList.contains('revealed')) return;
+            
+            box.classList.add('revealed');
+            playTinkleSound();
+            createConfetti(box);
+        }
+
+        function createConfetti(sourceBox) {
+            const rect = sourceBox.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            
+            for (let i = 0; i < 120; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.position = 'fixed';
+                    confetti.style.left = centerX + 'px';
+                    confetti.style.top = centerY + 'px';
+                    confetti.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+                    confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+                    confetti.style.width = (Math.random() * 12 + 6) + 'px';
+                    confetti.style.height = confetti.style.width;
+                    confetti.style.pointerEvents = 'none';
+                    confetti.style.zIndex = '9999';
+                    confetti.style.boxShadow = `0 0 6px ${confetti.style.backgroundColor}`;
+                    
+                    // Create upward burst pattern with left and right spread
+                    const angle = (Math.random() * 180) * (Math.PI / 180); // 0 to 180 degrees (full upward semicircle)
+                    const velocity = Math.random() * 300 + 200;
+                    const deltaX = Math.cos(angle) * velocity;
+                    const deltaY = -Math.abs(Math.sin(angle) * velocity); // Force upward motion
+                    
+                    document.body.appendChild(confetti);
+                    
+                    // First phase: shoot upward
+                    confetti.style.transition = `transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)`;
+                    
+                    setTimeout(() => {
+                        confetti.style.transform = `translate(${deltaX}px, ${deltaY}px) rotate(${Math.random() * 360}deg)`;
+                    }, 10);
+                    
+                    // Second phase: fall down with even distribution
+                    setTimeout(() => {
+                        // Divide confetti into three equal groups for left, center, right
+                        const group = i % 3;
+                        let finalX;
+                        
+                        if (group === 0) {
+                            // Left third - fall to left side
+                            finalX = deltaX - (Math.random() * 300 + 200);
+                        } else if (group === 1) {
+                            // Center third - fall near center
+                            finalX = deltaX + (Math.random() - 0.5) * 200;
+                        } else {
+                            // Right third - fall to right side
+                            finalX = deltaX + (Math.random() * 300 + 200);
+                        }
+                        
+                        const finalY = window.innerHeight + 200;
+                        confetti.style.transition = `transform 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 1s ease-out 1.5s`;
+                        confetti.style.transform = `translate(${finalX}px, ${finalY}px) rotate(${Math.random() * 720 + 360}deg)`;
+                        confetti.style.opacity = '0';
+                    }, 1200);
+                    
+                    setTimeout(() => {
+                        if (confetti.parentNode) {
+                            confetti.parentNode.removeChild(confetti);
+                        }
+                    }, 4500);
+                }, i * 6);
+            }
+        }
+
+        function adjustFontSize(element) {
+            const container = element.parentElement;
+            const containerWidth = container.offsetWidth - 16; // Account for padding
+            const containerHeight = container.offsetHeight - 16;
+            
+            // Start with a font size based on container size for better scaling
+            let fontSize = Math.min(containerWidth, containerHeight) / 4;
+            element.style.fontSize = fontSize + 'px';
+            
+            // Increase font size until text fills the container
+            while (fontSize < 200) {
+                element.style.fontSize = fontSize + 'px';
+                
+                if (element.scrollWidth > containerWidth || element.scrollHeight > containerHeight) {
+                    // Text is too big, go back one step
+                    fontSize = Math.max(fontSize - 1, 12);
+                    element.style.fontSize = fontSize + 'px';
+                    break;
+                }
+                fontSize += 2; // Increment by 2 for faster scaling
+            }
+        }
+
+        function playTinkleSound() {
+            try {
+                // Create a simple tinkling sound using Web Audio API
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                
+                // Create multiple tones for a tinkling effect
+                const frequencies = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
+                
+                frequencies.forEach((freq, index) => {
+                    setTimeout(() => {
+                        const oscillator = audioContext.createOscillator();
+                        const gainNode = audioContext.createGain();
+                        
+                        oscillator.connect(gainNode);
+                        gainNode.connect(audioContext.destination);
+                        
+                        oscillator.frequency.setValueAtTime(freq, audioContext.currentTime);
+                        oscillator.type = 'sine';
+                        
+                        gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+                        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.8);
+                        
+                        oscillator.start(audioContext.currentTime);
+                        oscillator.stop(audioContext.currentTime + 0.8);
+                    }, index * 100);
+                });
+            } catch (error) {
+                console.log('✨ Audio not supported in this environment');
+            }
+        }
+
+        function resetGame() {
+            createGrid();
+        }
+
+        // Initialize the game
+        createGrid();
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'95f28142b46b0ca1',t:'MTc1MjUxMTY3Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
